@@ -38,7 +38,7 @@
 - **Hyperparameter Tuning:** Optuna 등 최적화 프레임워크를 활용한 모델 정밀 튜닝
 - **Ensemble / Stacking:** LightGBM, CatBoost 등 이종 모델과의 스태킹 앙상블을 통한 일반화 성능 극대화
 - **External Data:** 상세 강수량, 지역 축제/이벤트 등 외부 데이터 결합으로 설명력 보완
-- 
+  
 - <img width="1490" height="590" alt="다운로드 (7)" src="https://github.com/user-attachments/assets/4da20957-183b-48a5-9fe7-799015dae1e3" />
 
 - <img width="1189" height="590" alt="다운로드 (8)" src="https://github.com/user-attachments/assets/2efbee51-8406-4da9-96e1-52081cb6d628" />
