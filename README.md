@@ -17,13 +17,13 @@
 - **Environment:** Google Colab
 
 ## 🚀 4. 모델링 진행 과정 및 성능 개선 (Modeling Process)
-점진적인 피처 엔지니어링과 모델 고도화를 통해 **최초 모델 대비 약 66%의 성능(오차) 개선**을 달성했습니다.
+점진적인 피처 엔지니어링과 모델 고도화를 통해 **최초 모델 대비 약 67%의 성능(오차) 개선**을 달성했습니다.
 
 | 단계 | 모델 및 적용 기법 | 성과 (RMSLE) | 핵심 내용 |
 |:---:|:---|:---:|:---|
-| **1차** | Baseline (선형 회귀) | `1.0250` | 기본 데이터 전처리 및 탐색적 데이터 분석(EDA) 적용 |
-| **2차** | Linear + OHE | `0.5808` | 계절, 날씨, 시간 등 범주형 변수에 원-핫 인코딩(One-Hot Encoding) 적용하여 비선형 패턴 학습 유도 |
-| **3차** | XGBoost + 파생 변수 | `0.3450` | 출퇴근 시간(`is_rush_hour`), 체감온도 등 복합 파생 변수 추가 및 희소 행렬에 강한 트리 기반 앙상블 모델 도입 |
+| **1차** | Baseline (선형 회귀) | `1.0251` | 기본 데이터 전처리 및 탐색적 데이터 분석(EDA) 적용 |
+| **2차** | Linear + OHE | `0.5810` | 계절, 날씨, 시간 등 범주형 변수에 원-핫 인코딩(One-Hot Encoding) 적용하여 비선형 패턴 학습 유도 |
+| **3차** | XGBoost | `0.3481` | 2차 모델과 동일한 OHE 확장 피처를 사용하되, 비선형 관계 포착에 강한 트리 기반 앙상블 모델(XGBoost) 도입 |
 | **최종** | **Two-Track 모델 (XGBoost)** | **`0.3398`** | **Casual(비회원)과 Registered(정기권) 타겟을 분리(Target Separation)하여 각각 학습 후 최종 예측값을 합산하는 기법 도입** |
 
 ## 💡 5. 핵심 인사이트 및 운영 전략 (Key Insights & Strategies)
@@ -38,7 +38,9 @@
 - **Hyperparameter Tuning:** Optuna 등 최적화 프레임워크를 활용한 모델 정밀 튜닝
 - **Ensemble / Stacking:** LightGBM, CatBoost 등 이종 모델과의 스태킹 앙상블을 통한 일반화 성능 극대화
 - **External Data:** 상세 강수량, 지역 축제/이벤트 등 외부 데이터 결합으로 설명력 보완
-  
-- <img width="1490" height="590" alt="다운로드 (7)" src="https://github.com/user-attachments/assets/4da20957-183b-48a5-9fe7-799015dae1e3" />
 
-- <img width="1189" height="590" alt="다운로드 (8)" src="https://github.com/user-attachments/assets/2efbee51-8406-4da9-96e1-52081cb6d628" />
+## 📈 7. 주요 시각화 (Visualizations)
+
+<img width="1490" height="590" alt="시간대별 사용자 그룹 예측 수요 패턴" src="https://github.com/user-attachments/assets/4da20957-183b-48a5-9fe7-799015dae1e3" />
+
+<img width="1189" height="590" alt="평일 vs 주말 시간대별 예측 대여량 패턴" src="https://github.com/user-attachments/assets/2efbee51-8406-4da9-96e1-52081cb6d628" />
